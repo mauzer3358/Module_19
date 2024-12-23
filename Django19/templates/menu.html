@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой Магазин{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block header %}
+        <h1>Главная страница</h1>
+        {% endblock %}
+    </header>
+    <menu>
+        {% block pagename %}
+        <a href="http://127.0.0.1:8000/platform/">Главная</a>
+        <br>
+        <a href="http://127.0.0.1:8000/platform/games/">Магазин</a>
+        <br>
+        <a href="http://127.0.0.1:8000/platform/cart/">Корзина</a>
+        {% endblock %}
+    </menu>
+    <content>
+        {% block content %}
+        <p>здесь будет располагаться контент</p>
+        {% endblock %}
+    </content>
+</body>
+</html>
