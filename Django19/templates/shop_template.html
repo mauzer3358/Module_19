@@ -1,0 +1,40 @@
+{% extends 'menu.html' %}
+
+{% block title %} shop {% endblock %}
+
+{% block header %}
+    <h1>Магазин</h1>
+{% endblock%}
+
+{% block pagename %}
+    <h2>{{block.super}}</h2>
+{% endblock %}
+
+{% block content %}
+    {% for i in games %}
+    <ul>
+        <li><h3>{{i}} | {{i.description}}. Стоимость {{i.cost}} <button>Купить</button></h3></li>
+    </ul>
+    {% endfor %}
+{% endblock %}
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>Магазин</h1>
+    <ul>
+        <li>{{ item1 }} <button>Купить</button></li>
+        <li>{{ item2 }} <button>Купить</button></li>
+        <li>{{ item3 }} <button>Купить</button></li>
+    </ul>
+    <button><a href="http://127.0.0.1:8000/platform/">Вернуться обратно</a></button>
+</body>
+</html>
+
+-->

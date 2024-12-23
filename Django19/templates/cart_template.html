@@ -1,0 +1,18 @@
+{% extends 'menu.html' %}
+
+{% block title %} Cart {% endblock %}
+
+{% block header %}
+    <h1>Корзина</h1>
+{% endblock%}
+
+{% block pagename %}
+    <h2>{{block.super}}</h2>
+{% endblock %}
+
+{% block content %}
+    <h2>Извините, ваша корзина пуста</h2>
+    <button><h3><a href="http://127.0.0.1:8000/platform/">Вернуться обратно</a></h3></button>
+{% endblock %}
+
+
