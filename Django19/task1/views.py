@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator
 from django.views.generic import TemplateView
 from .models import *
 from django.http import HttpResponse
@@ -6,7 +7,11 @@ from .forms import UserReg
 
 # Create your views here.
 def main_page(request):
-    return render(request, 'main_template.html')
+    news = News.objects.all()
+    paginator = Paginator(news,3)
+    page_number = request.GET.get('page')
+    page_news = paginator.get_page(page_number)
+    return render(request, 'news.html', {'page_news':page_news})
 
 def shop_page(request):
     #games = ["Atomic Heart","Cyberpunk 2077", "PayDay 2"]
